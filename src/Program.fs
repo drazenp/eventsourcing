@@ -88,7 +88,9 @@ let main _ =
     eventStore.Append [Flavour_sold Vanilla]
     eventStore.Append [Flavour_sold Vanilla; Flavour_went_out_of_stock Vanilla]
 
-    eventStore.Get()
-        |> printEvents
+    let events = eventStore.Get()
+
+    
+    events |> printEvents
 
     0 // return an integer exit code
